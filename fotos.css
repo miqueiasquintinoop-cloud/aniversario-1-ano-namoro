@@ -1,0 +1,304 @@
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #74334d;
+    background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
+    overflow-x: hidden;
+}
+
+/* =========================================
+   CABEÇALHO ROMÂNTICO
+========================================= */
+
+.card {
+    position: relative;
+    z-index: 5;
+    width: min(90%, 750px);
+    margin: 45px auto 20px;
+    padding: 30px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ffd0df;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(177, 70, 112, 0.12);
+}
+
+.card h1 {
+    margin-top: 0;
+    color: #d6336c;
+    font-size: clamp(28px, 5vw, 42px);
+}
+
+.card p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.card h4 {
+    color: #c2255c;
+    font-size: 18px;
+}
+
+.instrucao {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #d6336c;
+}
+
+/* =========================================
+   GALERIA DE FOTOS ESPALHADAS
+========================================= */
+
+.galeria {
+    position: relative;
+    width: min(100%, 1200px);
+    height: 1450px;
+    margin: 20px auto 0;
+}
+
+/* Cartão que permite virar a foto */
+
+.foto-card {
+    position: absolute;
+    width: 180px;
+    height: 230px;
+    perspective: 1000px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.foto-card-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.foto-card.virada .foto-card-interno {
+    transform: rotateY(180deg);
+}
+
+/* Frente e verso */
+
+.foto-frente,
+.foto-verso {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(124, 42, 77, 0.2);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.foto-frente {
+    background: #fff;
+}
+
+.foto-frente img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto-verso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    color: #9e2450;
+    background: linear-gradient(145deg, #fff0f5, #ffc4d6);
+    transform: rotateY(180deg);
+}
+
+.foto-verso .coracao {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.foto-verso h3 {
+    margin: 5px 0 10px;
+    font-size: 18px;
+    color: #c2255c;
+}
+
+.foto-verso p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.foto-verso small {
+    margin-top: 12px;
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* Efeito ao passar o mouse */
+
+.foto-card:not(.virada):hover {
+    z-index: 20;
+}
+
+.foto-card:not(.virada):hover .foto-card-interno {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.foto-card.virada:hover .foto-card-interno {
+    transform: rotateY(180deg) scale(1.03);
+}
+
+/* =========================================
+   POSIÇÃO DE CADA FOTO
+========================================= */
+
+.foto1  { top: 20px;   left: 5%;   transform: rotate(-8deg); }
+.foto2  { top: 90px;   left: 35%;  transform: rotate(6deg); }
+.foto3  { top: 30px;   right: 5%;  transform: rotate(9deg); }
+.foto4  { top: 320px;  left: 15%;  transform: rotate(5deg); }
+.foto5  { top: 270px;  left: 55%;  transform: rotate(-7deg); }
+.foto6  { top: 490px;  left: 2%;   transform: rotate(7deg); }
+.foto7  { top: 520px;  left: 38%;  transform: rotate(-5deg); }
+.foto8  { top: 480px;  right: 3%;  transform: rotate(8deg); }
+.foto9  { top: 730px;  left: 18%;  transform: rotate(-9deg); }
+.foto10 { top: 720px;  left: 57%;  transform: rotate(6deg); }
+.foto11 { top: 900px;  left: 3%;   transform: rotate(-5deg); }
+.foto12 { top: 950px;  left: 37%;  transform: rotate(8deg); }
+.foto13 { top: 900px;  right: 3%;  transform: rotate(-8deg); }
+.foto14 { top: 1120px; left: 15%;  transform: rotate(5deg); }
+.foto16 { top: 1130px; left: 55%;  transform: rotate(-6deg); }
+.foto17 { top: 1300px; left: 3%;   transform: rotate(7deg); }
+.foto18 { top: 1300px; left: 39%;  transform: rotate(-7deg); }
+.foto19 { top: 1300px; right: 3%; transform: rotate(5deg); }
+.foto20 { top: 1550px; left: 12%;  transform: rotate(-8deg); }
+.foto22 { top: 1570px; left: 55%;  transform: rotate(6deg); }
+.foto23 { top: 1800px; left: 28%;  transform: rotate(7deg); }
+.foto24 { top: 1810px; left: 62%;  transform: rotate(-5deg); }
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 450px;
+    padding: 30px 15px;
+    text-align: center;
+    line-height: 1.8;
+    color: #b52b60;
+}
+
+/* =========================================
+   RESPONSIVIDADE PARA CELULAR
+========================================= */
+
+@media (max-width: 650px) {
+
+    .card {
+        margin-top: 20px;
+        padding: 25px 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .galeria {
+        height: 2050px;
+    }
+
+    .foto-card {
+        width: 135px;
+        height: 175px;
+    }
+
+    .foto-verso {
+        padding: 9px;
+    }
+
+    .foto-verso .coracao {
+        font-size: 21px;
+    }
+
+    .foto-verso h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .foto-verso p {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .foto-verso small {
+        margin-top: 7px;
+        font-size: 9px;
+    }
+
+    .foto1  { top: 20px;   left: 5%; }
+    .foto2  { top: 100px;  right: 5%; left: auto; }
+    .foto3  { top: 250px;  left: 8%; }
+    .foto4  { top: 330px;  right: 5%; left: auto; }
+    .foto5  { top: 480px;  left: 5%; }
+    .foto6  { top: 560px;  right: 5%; left: auto; }
+    .foto7  { top: 710px;  left: 8%; }
+    .foto8  { top: 790px;  right: 5%; left: auto; }
+    .foto9  { top: 940px;  left: 5%; }
+    .foto10 { top: 1020px; right: 5%; left: auto; }
+    .foto11 { top: 1170px; left: 8%; }
+    .foto12 { top: 1250px; right: 5%; left: auto; }
+    .foto13 { top: 1400px; left: 5%; }
+    .foto14 { top: 1480px; right: 5%; left: auto; }
+    .foto16 { top: 1630px; left: 8%; }
+    .foto17 { top: 1710px; right: 5%; left: auto; }
+    .foto18 { top: 1860px; left: 5%; }
+    .foto19 { top: 1940px; right: 5%; left: auto; }
+
+    .foto20,
+    .foto22,
+    .foto23,
+    .foto24 {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        display: inline-block;
+        margin: 12px 5px;
+        vertical-align: top;
+    }
+
+    .galeria {
+        height: auto;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .foto-card-interno {
+        transition-duration: 0.01ms;
+    }
+}

@@ -1,0 +1,138 @@
+body{
+   
+    background-color: #ffe4ec;
+    text-align:center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+h1 {
+    color: #e72556;
+    font-size:  40px;
+}
+
+p{
+    color: #e72556;
+    font-size: 20px;
+}
+
+.botao {
+    background-color: #d6336c;
+    color: rgb(255, 255, 255);
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #da4a69 ;
+    
+}
+.card {
+    background-color: #fff5f8;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.cart img {
+    border: 6px solid #522442;
+    width: 150px; 
+}
+
+.hitoria {
+    max-width: 700px;
+}
+
+h2 {
+    color:#e72556;
+    font-size:  20px;
+}
+
+h3 {
+    color: #e72556;
+}
+
+.momento {
+    background-color: #fff5f8;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+    max-width: 700px;
+    position: relative;
+}
+
+.foto-coracao {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center 20%;
+    border: none;
+
+    clip-path: polygon(
+        50% 95%,
+        10% 55%,
+        5% 40%,
+        5% 25%,
+        10% 15%,
+        20% 10%,
+        30% 10%,
+        40% 15%,
+        50% 25%,
+        60% 15%,
+        70% 10%,
+        80% 10%,
+        90% 15%,
+        95% 25%,
+        95% 40%,
+        90% 55%
+    );
+}
+
+.foto-cima {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+}
+
+.foto-baixo{
+
+    position: absolute;
+    top: 4000px;
+    left: 1150px;
+}
+
+
+.foto-lado1{
+
+    position: absolute;
+    top: 4000px;
+    left: 30px;
+}
+
+
+.foto-lado2{
+
+    position: absolute;
+    top: 10px;
+    left: 1150px;
+}
+
+h4 {
+    color:#e72556;
+    font-size: 34px;
+}
