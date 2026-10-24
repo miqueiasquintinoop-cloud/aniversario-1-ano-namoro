@@ -56,17 +56,15 @@ body {
 }
 
 /* =========================================
-   GALERIA DE FOTOS ESPALHADAS
+   GALERIA - COMPUTADOR
 ========================================= */
 
 .galeria {
     position: relative;
     width: min(100%, 1200px);
-    height: 1450px;
+    height: 2300px;
     margin: 20px auto 0;
 }
-
-/* Cartão que permite virar a foto */
 
 .foto-card {
     position: absolute;
@@ -90,7 +88,9 @@ body {
     transform: rotateY(180deg);
 }
 
-/* Frente e verso */
+/* =========================================
+   FRENTE E VERSO DOS CARTÕES
+========================================= */
 
 .foto-frente,
 .foto-verso {
@@ -127,6 +127,7 @@ body {
     color: #9e2450;
     background: linear-gradient(145deg, #fff0f5, #ffc4d6);
     transform: rotateY(180deg);
+    overflow-wrap: anywhere;
 }
 
 .foto-verso .coracao {
@@ -141,7 +142,7 @@ body {
 }
 
 .foto-verso p {
-    margin: 0;
+    margin: 0 0 5px;
     font-size: 13px;
     line-height: 1.5;
 }
@@ -152,7 +153,9 @@ body {
     opacity: 0.8;
 }
 
-/* Efeito ao passar o mouse */
+/* =========================================
+   EFEITOS NO COMPUTADOR
+========================================= */
 
 .foto-card:not(.virada):hover {
     z-index: 20;
@@ -167,32 +170,38 @@ body {
 }
 
 /* =========================================
-   POSIÇÃO DE CADA FOTO
+   POSIÇÃO DAS FOTOS - COMPUTADOR
 ========================================= */
 
 .foto1  { top: 20px;   left: 5%;   transform: rotate(-8deg); }
-.foto2  { top: 90px;   left: 35%;  transform: rotate(6deg); }
+.foto2  { top: 100px;  left: 35%;  transform: rotate(6deg); }
 .foto3  { top: 30px;   right: 5%;  transform: rotate(9deg); }
-.foto4  { top: 320px;  left: 15%;  transform: rotate(5deg); }
-.foto5  { top: 270px;  left: 55%;  transform: rotate(-7deg); }
+.foto4  { top: 270px;  left: 15%;  transform: rotate(5deg); }
+.foto5  { top: 270px;  left: 60%;  transform: rotate(-7deg); }
 .foto6  { top: 490px;  left: 2%;   transform: rotate(7deg); }
-.foto7  { top: 520px;  left: 38%;  transform: rotate(-5deg); }
+.foto7  { top: 540px;  left: 38%;  transform: rotate(-5deg); }
 .foto8  { top: 480px;  right: 3%;  transform: rotate(8deg); }
 .foto9  { top: 730px;  left: 18%;  transform: rotate(-9deg); }
 .foto10 { top: 720px;  left: 57%;  transform: rotate(6deg); }
 .foto11 { top: 900px;  left: 3%;   transform: rotate(-5deg); }
-.foto12 { top: 950px;  left: 37%;  transform: rotate(8deg); }
+.foto12 { top: 2300px; left: 15%;  transform: rotate(5deg);}
 .foto13 { top: 900px;  right: 3%;  transform: rotate(-8deg); }
-.foto14 { top: 1120px; left: 15%;  transform: rotate(5deg); }
+.foto14 { top: 2000px; left: 5%;   transform: rotate(5deg); }
 .foto16 { top: 1130px; left: 55%;  transform: rotate(-6deg); }
-.foto17 { top: 1300px; left: 3%;   transform: rotate(7deg); }
+.foto17 { top: 1200px; left: 8%;   transform: rotate(7deg); }
 .foto18 { top: 1300px; left: 39%;  transform: rotate(-7deg); }
 .foto19 { top: 1300px; right: 3%; transform: rotate(5deg); }
 .foto20 { top: 1550px; left: 12%;  transform: rotate(-8deg); }
-.foto22 { top: 1570px; left: 55%;  transform: rotate(6deg); }
-.foto23 { top: 1800px; left: 28%;  transform: rotate(7deg); }
-.foto24 { top: 1810px; left: 62%;  transform: rotate(-5deg); }
-
+.foto22 { top: 1540px; left: 60%;  transform: rotate(6deg); }
+.foto23 { top: 1800px; left: 34%;  transform: rotate(7deg); }
+.foto24 { top: 1989px; left: 60%;  transform: rotate(-5deg); }
+.foto25 { top: 2100px; left: 35%;  transform: rotate(5deg); }
+.foto26 { top: 950px;  left: 37%;  transform: rotate(8deg);  }
+.foto27 { top: 2300px;  left: 50%;  transform: rotate(-7deg);  }
+.foto28 { top: 2300px;  left: 10%;  transform: rotate(7deg);  }
+.foto29 { top: 3300px;  left: 60%;  transform: rotate(7deg);  }
+.foto30 { top: 4300px;  left: 0%;  transform: rotate(7deg);  }
+.foto31 { top: 5300px;  left: 60%;  transform: rotate(7deg);  }
 /* =========================================
    RODAPÉ
 ========================================= */
@@ -200,7 +209,7 @@ body {
 footer {
     position: relative;
     z-index: 2;
-    margin-top: 450px;
+    margin-top: 20px;
     padding: 30px 15px;
     text-align: center;
     line-height: 1.8;
@@ -208,45 +217,104 @@ footer {
 }
 
 /* =========================================
-   RESPONSIVIDADE PARA CELULAR
+   CELULAR E TABLET
 ========================================= */
 
 @media (max-width: 650px) {
 
+    body {
+        overflow-x: clip;
+    }
+
     .card {
-        margin-top: 20px;
-        padding: 25px 18px;
+        width: calc(100% - 28px);
+        margin: 18px auto 24px;
+        padding: 24px 16px;
+        border-radius: 20px;
+    }
+
+    .card h1 {
+        font-size: clamp(26px, 7vw, 34px);
     }
 
     .card p {
         font-size: 14px;
+        line-height: 1.7;
     }
+
+    .card h4 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .instrucao {
+        margin-top: 20px;
+    }
+
+    /* A galeria agora cresce conforme as fotos */
 
     .galeria {
-        height: 2050px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 14px;
+        width: 100%;
+        height: auto;
+        margin: 20px auto 0;
+        padding: 12px 14px 30px;
+        align-items: start;
     }
 
-    .foto-card {
-        width: 135px;
-        height: 175px;
+    /* Todas as fotos seguem o fluxo da grade */
+
+    .galeria .foto-card {
+        position: relative;
+        inset: auto;
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 180 / 230;
+        margin: 0;
+        transform: none;
+        min-width: 0;
+        perspective: 1000px;
+    }
+
+    .foto-card-interno {
+        width: 100%;
+        height: 100%;
+    }
+
+    .foto-frente,
+    .foto-verso {
+        border-width: 4px;
+        border-radius: 10px;
+    }
+
+    .foto-frente img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .foto-verso {
-        padding: 9px;
+        padding: 8px;
     }
 
     .foto-verso .coracao {
-        font-size: 21px;
+        font-size: 20px;
+        margin-bottom: 3px;
     }
 
     .foto-verso h3 {
-        font-size: 14px;
-        margin-bottom: 6px;
+        font-size: clamp(11px, 3.2vw, 15px);
+        line-height: 1.25;
+        margin: 4px 0 7px;
     }
 
     .foto-verso p {
-        font-size: 10px;
+        font-size: clamp(9px, 2.6vw, 12px);
         line-height: 1.35;
+        margin-bottom: 4px;
     }
 
     .foto-verso small {
@@ -254,48 +322,54 @@ footer {
         font-size: 9px;
     }
 
-    .foto1  { top: 20px;   left: 5%; }
-    .foto2  { top: 100px;  right: 5%; left: auto; }
-    .foto3  { top: 250px;  left: 8%; }
-    .foto4  { top: 330px;  right: 5%; left: auto; }
-    .foto5  { top: 480px;  left: 5%; }
-    .foto6  { top: 560px;  right: 5%; left: auto; }
-    .foto7  { top: 710px;  left: 8%; }
-    .foto8  { top: 790px;  right: 5%; left: auto; }
-    .foto9  { top: 940px;  left: 5%; }
-    .foto10 { top: 1020px; right: 5%; left: auto; }
-    .foto11 { top: 1170px; left: 8%; }
-    .foto12 { top: 1250px; right: 5%; left: auto; }
-    .foto13 { top: 1400px; left: 5%; }
-    .foto14 { top: 1480px; right: 5%; left: auto; }
-    .foto16 { top: 1630px; left: 8%; }
-    .foto17 { top: 1710px; right: 5%; left: auto; }
-    .foto18 { top: 1860px; left: 5%; }
-    .foto19 { top: 1940px; right: 5%; left: auto; }
+    /* Evita o zoom do mouse em telas sensíveis ao toque */
 
-    .foto20,
-    .foto22,
-    .foto23,
-    .foto24 {
-        position: relative;
-        top: auto;
-        right: auto;
-        left: auto;
-        display: inline-block;
-        margin: 12px 5px;
-        vertical-align: top;
+    .foto-card:not(.virada):hover {
+        z-index: auto;
     }
 
-    .galeria {
-        height: auto;
-        padding-bottom: 20px;
-        text-align: center;
+    .foto-card:not(.virada):hover .foto-card-interno {
+        transform: none;
+    }
+
+    .foto-card.virada:hover .foto-card-interno {
+        transform: rotateY(180deg);
     }
 
     footer {
-        margin-top: 20px;
+        margin-top: 10px;
+        padding: 20px 15px;
     }
 }
+
+/* =========================================
+   CELULARES MUITO ESTREITOS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .galeria {
+        gap: 18px 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .foto-verso {
+        padding: 6px;
+    }
+
+    .foto-verso h3 {
+        font-size: 11px;
+    }
+
+    .foto-verso p {
+        font-size: 9px;
+    }
+}
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
     .foto-card-interno {

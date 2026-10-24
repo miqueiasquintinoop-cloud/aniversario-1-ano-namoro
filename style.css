@@ -1,45 +1,75 @@
-body{
-   
+/* =========================================
+   BASE (pensado primeiro para celular)
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 16px;
     background-color: #ffe4ec;
-    text-align:center;
+    text-align: center;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
+    overflow-x: hidden;
 }
 
 h1 {
     color: #e72556;
-    font-size:  40px;
+    font-size: 28px;
+    line-height: 1.2;
+    overflow-wrap: break-word;
 }
 
-p{
+h2 {
     color: #e72556;
     font-size: 20px;
 }
 
-.botao {
-    background-color: #d6336c;
-    color: rgb(255, 255, 255);
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 50px;
-    text-decoration: none;
+h3 {
+    color: #e72556;
 }
+
+h4 {
+    color: #e72556;
+    font-size: 26px;
+}
+
+p {
+    color: #e72556;
+    font-size: 17px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+/* =========================================
+   IMAGENS
+========================================= */
 
 img {
     width: 250px;
+    max-width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid #da4a69 ;
-    
+    border: 5px solid #da4a69;
 }
+
+/* =========================================
+   CARD PRINCIPAL (botões empilhados)
+========================================= */
+
 .card {
+    width: 100%;
+    max-width: 700px;
+    margin: 14px auto;
+    padding: 24px 18px;
     background-color: #fff5f8;
-    padding: 40px;
     border-radius: 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
@@ -49,40 +79,79 @@ img {
     gap: 14px;
 }
 
-.cart img {
-    border: 6px solid #522442;
-    width: 150px; 
+/* se os botões estiverem dentro de uma div com esta classe */
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
 }
 
+.botao {
+    display: block;
+    width: 80%;
+    max-width: 280px;
+    padding: 15px 25px;
+    background-color: #d6336c;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+/* =========================================
+   PÁGINA DA HISTÓRIA
+========================================= */
+
+.historia,
 .hitoria {
+    width: 100%;
     max-width: 700px;
-}
-
-h2 {
-    color:#e72556;
-    font-size:  20px;
-}
-
-h3 {
-    color: #e72556;
 }
 
 .momento {
-    background-color: #fff5f8;
-    padding: 50px;
-    margin-top: 50px;
-    border-radius: 20px;
-    max-width: 700px;
     position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 22px 14px;
+    background-color: #fff5f8;
+    border-radius: 20px;
 }
 
-.foto-coracao {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center 20%;
-    border: none;
+/* títulos ficam na frente das fotos */
+.momento h1,
+.momento h2,
+.momento h4 {
+    position: relative;
+    z-index: 2;
+}
 
+/* reserva espaço só nos cards que têm foto de coração */
+.momento:has(.foto-cima),
+.momento:has(.foto-lado2) {
+    padding-top: 105px;
+}
+
+.momento:has(.foto-baixo),
+.momento:has(.foto-lado1) {
+    padding-bottom: 105px;
+}
+
+/* =========================================
+   FOTOS EM FORMATO DE CORAÇÃO
+========================================= */
+
+.foto-coracao {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
     clip-path: polygon(
         50% 95%,
         10% 55%,
@@ -103,36 +172,90 @@ h3 {
     );
 }
 
+/* cantos do card */
 .foto-cima {
-    position: absolute;
-    top: 10px;
-    left: 30px;
+    top: 8px;
+    left: 8px;
 }
 
-.foto-baixo{
-
-    position: absolute;
-    top: 4000px;
-    left: 1150px;
+.foto-lado2 {
+    top: 8px;
+    right: 8px;
 }
 
-
-.foto-lado1{
-
-    position: absolute;
-    top: 4000px;
-    left: 30px;
+.foto-baixo {
+    bottom: 8px;
+    left: 8px;
 }
 
-
-.foto-lado2{
-
-    position: absolute;
-    top: 10px;
-    left: 1150px;
+.foto-lado1 {
+    bottom: 8px;
+    right: 8px;
 }
 
-h4 {
-    color:#e72556;
-    font-size: 34px;
+/* =========================================
+   TELAS MAIORES (PC / TABLET)
+========================================= */
+
+@media (min-width: 601px) {
+
+    body {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 34px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 40px;
+    }
+
+    .momento {
+        padding: 40px;
+        margin: 30px auto;
+    }
+
+    .momento:has(.foto-cima),
+    .momento:has(.foto-lado2) {
+        padding-top: 150px;
+    }
+
+    .momento:has(.foto-baixo),
+    .momento:has(.foto-lado1) {
+        padding-bottom: 150px;
+    }
+
+    .foto-coracao {
+        width: 130px;
+        height: 130px;
+    }
+
+    .foto-cima {
+        top: 10px;
+        left: 30px;
+    }
+
+    .foto-lado2 {
+        top: 10px;
+        right: 30px;
+    }
+
+    .foto-baixo {
+        bottom: 10px;
+        left: 30px;
+    }
+
+    .foto-lado1 {
+        bottom: 10px;
+        right: 30px;
+    }
 }

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Quiz ❤️</title>
+  <link rel="stylesheet" href="quiz.css">
+  <script src="quiz.js" defer></script>
+</head>
+<body>
+  <main class="quiz-container">
+    <div class="coracao">❤️</div>
+
+    <section id="inicio" class="tela">
+      <p class="subtitulo">UM DESAFIO PARA O MEU AMOR</p>
+      <h1>Quanto você conhece nossa história?</h1>
+      <p>
+        Prepare-se, amor! São 12 perguntas sobre nós,
+        algumas fofas e outras para dar risada. 💗
+      </p>
+      <button id="comecar">Começar o desafio ❤️</button>
+    </section>
+
+    <section id="jogo" class="tela escondido">
+      <div class="progresso-texto">
+        <span id="numero">Pergunta 1 de 12</span>
+        <span id="pontos">❤️ 0 pontos</span>
+      </div>
+
+      <div class="barra">
+        <div id="barra-progresso"></div>
+      </div>
+
+      <h2 id="pergunta"></h2>
+      <div id="opcoes" class="opcoes"></div>
+      <p id="feedback" aria-live="polite"></p>
+
+      <button id="proxima" class="escondido">
+        Próxima pergunta 💕
+      </button>
+    </section>
+
+    <section id="resultado" class="tela escondido">
+      <div class="coracao">💖</div>
+      <h1>Você terminou!</h1>
+      <p id="pontuacao-final"></p>
+      <p id="mensagem-final"></p>
+
+      <div id="surpresa" class="surpresa escondido">
+        <p>💌 UMA SURPRESA SÓ PARA VOCÊ 💌</p>
+        <h2>Meu amor, minha pessoa favorita!</h2>
+        <p> Cada fase, cada dia, cada memoria com voce é especial.!</p>
+        <p> Se eu pudesse voltar no tempo com certeza te escolheria como a mulher da minha vida</p>
+        <p>    EU TE AMOOOOOOOOOOOOOOOOOOOOOOO</p>
+        <div class="chuva-coracoes">💕 💗 💖 💘 💝</div>
+      </div>
+
+      <button id="jogar-novamente">Jogar novamente 🔄</button>
+      <a class="voltar" href="index.html">Voltar para nosso site 🏠</a>
+    </section>
+  </main>
+</body>
+</html>
